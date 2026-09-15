@@ -10,4 +10,8 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     volumes:
-      - ./db-data/:/var/lib/postgresql/data/
+      - postgres_data:/var/lib/postgresql/
+      
+volumes:
+  postgres_data:
+    driver: local
